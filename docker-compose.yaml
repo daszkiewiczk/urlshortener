@@ -34,7 +34,9 @@ services:
         npm install
         npx nodemon ./bin/www
   redirector:
-    build: ./redirector
+    build: 
+      context: ./redirector
+      network: host
     environment:
       - MONGO_USER=root
       - MONGO_PASSWORD=shorties
